@@ -1,0 +1,27 @@
+﻿angularjs  一切效果的切换都是数据的变化 而非dom的操作  ng-class ng-show ng-hide
+
+第一:模块的定义和引入模块名字不对
+第二:挂$scope需要加""包住
+第三:要在本地起http-server
+第四:ng-class="{class1:isClass,class2:isClass}"和class="{{color}}"的区别
+	使用ng-class来帮助通过双向数据绑定来做些样式的控制。ng-class 可以在里面写一些复杂的字符串语句
+第五:ng-model=""
+第六:独立作用域,属性值操作的是"AE"
+第七:使用&的时候,触发事件的写法:比如mvc中有个say(name){.....}的函数,
+	在指令的template:里面写ng-click="A({name:XXX})"
+第八:同一个指令中的 E  和  A  不能相同的字符串 
+第九:指令声明了自己的独立作用域,就不能用scope去调用外层用$scope定义的的属性.
+	已经私有了
+第十:如果要在不同的控制器调用同样的指令,就要用到指令的
+	属性('A')来划分不同控制器下	不同的塑性
+第十一:指令在页面上写的属性如果是按照驼峰法写的,在js中要用小写的形式写
+		触发事件的写法:scope.$apply(attrs.howtoload);既不要写函数调用的形式,也不要字符串
+第十二:指令内部的controller,是为了暴露公共的方法到外部调用,link是用来处
+		理指令内部的事的
+第十三:angular.js提供的transclude:ture,用来提示angular,我在哪里有嵌入内容
+		,并且在模板内用ng-transclude标识出来
+第十四: angurlar内置提供$templateCache,装一个共同的模板,供不同的指令使用
+		通过$templateCache.push('页面名字','页面代码')缓存页面;
+		$templateCache.get('页面名字')获取页面
+第十五: 指令 的三个阶段:加载  >  编译  >  链接
+

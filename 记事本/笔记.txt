@@ -1,0 +1,1 @@
+Ajax请求不会留下History记录
